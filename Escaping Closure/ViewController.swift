@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     func fetchData()
     {
-        DataHelper().fetchAccount { (data, success) in
+        let no = DataHelper().fetchAccount { (data, success) in
             if success
             {
                 print(data)
@@ -27,6 +27,7 @@ class ViewController: UIViewController {
                 print("Data Not Received")
             }
         }
+        print(no)
     }
     
     func sendRequest()
