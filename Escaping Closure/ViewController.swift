@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         fetchData()
+        sendRequest()
     }
 
     func fetchData()
@@ -24,6 +25,18 @@ class ViewController: UIViewController {
                 print(data)
             }else{
                 print("Data Not Received")
+            }
+        }
+    }
+    
+    func sendRequest()
+    {
+        DataHelper().sendRequest(url: "https://xyz.com") { (response, success) in
+            if success{
+                let strUrl = response as! String
+                print(strUrl)
+            }else{
+                print("Failed to receive data")
             }
         }
     }

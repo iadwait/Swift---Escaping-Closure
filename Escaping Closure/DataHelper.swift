@@ -12,7 +12,12 @@ class DataHelper{
     
     public func fetchAccount(completion:@escaping(_ response:Any,_ success:Bool)->Void){
                     let testNum = 10
-                    let success = false
+                    let success = true
                    completion(testNum,success)
+    }
+    
+    public func sendRequest(url: String,completion:@escaping(_ response:Any,_ success:Bool)->Void)
+    {
+        completion(url,true)
     }
 }
